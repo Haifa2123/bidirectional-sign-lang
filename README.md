@@ -42,6 +42,41 @@ Application areas include accessibility tools, real-time captioning for deaf com
 - **Modular Training & Inference Scripts:** Separate pipelines for data prep, training, evaluation, and inference.  
 
 ---
+Model Architecture
+Below is the high-level architecture diagram for our CNN + BiLSTM bidirectional translation system:
+
+<p align="center"> <img src="https://i.postimg.cc/5Nxkzx3z/Screenshot-48.png" alt="Architecture Diagram" width="700"/> </p>
+Components:
+
+Frame Extraction & Preprocessing
+
+Extract frames from input video
+
+Resize, normalize, and augment
+
+CNN Feature Extractor
+
+Processes each frame to produce spatial feature vectors
+
+BiLSTM Encoder (Text-to-Sign)
+
+Embeds input text tokens
+
+Bi‑directional LSTM captures context
+
+BiLSTM Decoder (Sign-to-Text)
+
+Takes CNN frame features as input
+
+Predicts output text sequence
+
+Attention Mechanism (optional)
+
+Aligns decoder steps with relevant encoder outputs
+
+Gesture Synthesizer (T2S)
+
+Converts decoder outputs back into sign language frames
 
 ## Installation
 
